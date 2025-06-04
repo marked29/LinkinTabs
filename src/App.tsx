@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import CurrentTabs from '@/components/molecules/currentTabs';
 import OpenTabs from '@/components/molecules/openTabs';
+import CurrentTabsDataTable from './components/molecules/currentTabsDataTable/page';
 
 import useFetchTabs from '@/hooks/useFetchTabs';
 
@@ -23,7 +24,8 @@ function App() {
             <TabsTrigger value={TAB_TRIGGER_VALUES.NEW_TABS}>{TAB_TRIGGER_VALUES.NEW_TABS}</TabsTrigger>
           </TabsList>
           <TabsContent value={TAB_TRIGGER_VALUES.CURRENT_TABS}>
-            <CurrentTabs tabLinks={tabs} fetchAllTabs={fetchAllTabs} />
+            {/* <CurrentTabs tabLinks={tabs} fetchAllTabs={fetchAllTabs} /> */}
+            <CurrentTabsDataTable />
           </TabsContent>
           <TabsContent value={TAB_TRIGGER_VALUES.NEW_TABS}>
             <OpenTabs />
