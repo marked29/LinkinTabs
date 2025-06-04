@@ -6,7 +6,7 @@ import OpenTabs from '@/components/molecules/openTabs';
 import useFetchTabs from '@/hooks/useFetchTabs';
 
 const TAB_TRIGGER_VALUES = {
-  CURRENT_TABS: 'Manage Current Tabs',
+  CURRENT_TABS: 'Manage Tabs',
   NEW_TABS: 'Open New Tabs',
 };
 
@@ -19,8 +19,8 @@ function App() {
         <h1 className="text-xl font-bold text-center">Linkin Tabs</h1>
         <Tabs defaultValue={TAB_TRIGGER_VALUES.CURRENT_TABS} className="w-full">
           <TabsList className="w-full mx-auto flex justify-center">
-            <TabsTrigger value={TAB_TRIGGER_VALUES.CURRENT_TABS}>Current tabs</TabsTrigger>
-            <TabsTrigger value={TAB_TRIGGER_VALUES.NEW_TABS}>Open new tabs</TabsTrigger>
+            <TabsTrigger value={TAB_TRIGGER_VALUES.CURRENT_TABS}>{TAB_TRIGGER_VALUES.CURRENT_TABS}</TabsTrigger>
+            <TabsTrigger value={TAB_TRIGGER_VALUES.NEW_TABS}>{TAB_TRIGGER_VALUES.NEW_TABS}</TabsTrigger>
           </TabsList>
           <TabsContent value={TAB_TRIGGER_VALUES.CURRENT_TABS}>
             <CurrentTabs tabLinks={tabs} fetchAllTabs={fetchAllTabs} />
