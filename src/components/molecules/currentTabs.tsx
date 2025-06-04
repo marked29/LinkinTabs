@@ -72,7 +72,7 @@ const CurrentTabs = React.memo(({ tabLinks, fetchAllTabs }: CurrentTabsProps) =>
         </CardContent>
       </Card>
 
-      <Button className="flex w-full mt-2" onClick={handleCopyAllLinks}>
+      <Button className="w-full mt-2" onClick={handleCopyAllLinks}>
         Copy all links
       </Button>
     </>

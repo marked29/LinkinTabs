@@ -34,7 +34,7 @@ const OpenTabs = () => {
         </CardContent>
       </Card>
 
-      <Button className="w-[100%]" onClick={openAllTabs}>
+      <Button className="w-[100%] mt-2" onClick={openAllTabs}>
         Open all tabs
       </Button>
     </>
