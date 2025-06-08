@@ -6,13 +6,13 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const REGEX_URL = /\b((?:https?:\/\/|www\.)[^\s"'<>]+(?:\.[^\s"'<>]+)*(?:\/[^\s"'<>]*)?)/gi;
 
+const extractLinks = (text: string): string[] => {
+  const matches = text.match(REGEX_URL);
+  return matches ? matches.map((link) => link.trim()) : [];
+};
+
 const OpenTabs = () => {
   const [bulkLinks, setBulkLinks] = useState<string>('');
-
-  const extractLinks = (text: string): string[] => {
-    const matches = text.match(REGEX_URL);
-    return matches ? matches.map((link) => link.trim()) : [];
-  };
 
   const openAllTabs = () => {
     const links = extractLinks(bulkLinks);

@@ -1,10 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-import CurrentTabs from '@/components/molecules/currentTabs';
 import OpenTabs from '@/components/molecules/openTabs';
-import CurrentTabsDataTable from './components/molecules/currentTabsDataTable/page';
-
-import useFetchTabs from '@/hooks/useFetchTabs';
+import CurrentTabs from '@/components/molecules/currentTabs';
 
 const TAB_TRIGGER_VALUES = {
   CURRENT_TABS: 'Manage Tabs',
@@ -12,8 +9,6 @@ const TAB_TRIGGER_VALUES = {
 };
 
 function App() {
-  const { tabs, fetchAllTabs } = useFetchTabs();
-
   return (
     <>
       <main className="w-[300px] p-4 space-y-4">
@@ -24,8 +19,7 @@ function App() {
             <TabsTrigger value={TAB_TRIGGER_VALUES.NEW_TABS}>{TAB_TRIGGER_VALUES.NEW_TABS}</TabsTrigger>
           </TabsList>
           <TabsContent value={TAB_TRIGGER_VALUES.CURRENT_TABS}>
-            {/* <CurrentTabs tabLinks={tabs} fetchAllTabs={fetchAllTabs} /> */}
-            <CurrentTabsDataTable />
+            <CurrentTabs />
           </TabsContent>
           <TabsContent value={TAB_TRIGGER_VALUES.NEW_TABS}>
             <OpenTabs />
