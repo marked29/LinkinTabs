@@ -19,7 +19,6 @@ const OpenTabs = () => {
       alert('No valid links to open');
       return;
     }
-    // Open each link in a new tab (works in browser extension context)
     links.forEach((url) => {
       chrome.tabs.create({ url });
     });
@@ -27,7 +26,7 @@ const OpenTabs = () => {
 
   return (
     <>
-      <Textarea placeholder="Type in your links to open" value={bulkLinks} onChange={(e) => setBulkLinks(e.target.value)} />
+      <Textarea className="text-[12px]" placeholder="Type in your links to open" value={bulkLinks} onChange={(e) => setBulkLinks(e.target.value)} />
 
       <Button className="w-[100%] mt-2" onClick={openAllTabs}>
         Open all tabs
