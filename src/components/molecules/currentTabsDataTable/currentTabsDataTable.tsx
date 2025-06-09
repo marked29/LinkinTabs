@@ -11,6 +11,17 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
+const copyToClipboard = (text: string) => {
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      toast.success('Text copied to clipboard successfully.');
+    })
+    .catch(() => {
+      toast.error('Failed to copy text to clipboard.');
+    });
+};
+
 export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = useState({});
 
@@ -30,14 +41,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
       .rows.map((row) => row.original.link)
       .filter((link) => link); // Filter out any undefined or null links
     if (selectedLinks.length > 0) {
-      navigator.clipboard
-        .writeText(selectedLinks.join('\n'))
-        .then(() => {
-          toast.success('Links have successfuly been copied to clipboard.');
-        })
-        .catch(() => {
-          toast.error('Failed to copy links.');
-        });
+      copyToClipboard(selectedLinks.join('\n'));
     } else {
       toast.info('No links selected to copy.');
     }
