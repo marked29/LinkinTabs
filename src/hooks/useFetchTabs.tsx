@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 
 export const useFetchTabs = () => {
-  const [tabs, setTabs] = useState<any[]>([{}]);
+  const [tabs, setTabs] = useState<any[] | undefined>();
 
   const fetchAllTabs = useCallback(async () => {
     if (!chrome || !chrome.tabs) {

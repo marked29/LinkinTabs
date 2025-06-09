@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import OpenTabs from '@/components/molecules/openTabs';
-import CurrentTabs from '@/components/molecules/currentTabs';
+import CurrentTabsDataTable from '@/components/molecules/currentTabsDataTable/page';
 
 const TAB_TRIGGER_VALUES = {
   CURRENT_TABS: 'Manage Tabs',
@@ -19,7 +19,7 @@ function App() {
             <TabsTrigger value={TAB_TRIGGER_VALUES.NEW_TABS}>{TAB_TRIGGER_VALUES.NEW_TABS}</TabsTrigger>
           </TabsList>
           <TabsContent value={TAB_TRIGGER_VALUES.CURRENT_TABS}>
-            <CurrentTabs />
+            <CurrentTabsDataTable />
           </TabsContent>
           <TabsContent value={TAB_TRIGGER_VALUES.NEW_TABS}>
             <OpenTabs />
