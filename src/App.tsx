@@ -11,7 +11,7 @@ const TAB_TRIGGER_VALUES = {
 function App() {
   return (
     <>
-      <main className="w-[300px] p-4 space-y-4">
+      <main className="w-[370px] p-4 space-y-4">
         <h1 className="text-xl font-bold text-center">Linkin Tabs</h1>
         <Tabs defaultValue={TAB_TRIGGER_VALUES.CURRENT_TABS} className="w-full">
           <TabsList className="w-full mx-auto flex justify-center">

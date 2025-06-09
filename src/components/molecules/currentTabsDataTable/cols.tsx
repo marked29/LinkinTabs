@@ -1,6 +1,7 @@
 import { type ColumnDef } from '@tanstack/react-table';
 
 import { Checkbox } from '@/components/ui/checkbox';
+import { shortenUrl } from '@/lib/utils';
 
 export type CurrentTabsDataTableProps = {
   link: string;
@@ -21,5 +22,13 @@ export const cols: ColumnDef<CurrentTabsDataTableProps>[] = [
   {
     accessorKey: 'link',
     header: 'Link',
+    cell: ({ row }) => {
+      const link = row.getValue('link') as string;
+      return (
+        <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+          {shortenUrl(link)}
+        </a>
+      );
+    },
   },
 ];

@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 
 const REGEX_URL = /\b((?:https?:\/\/|www\.)[^\s"'<>]+(?:\.[^\s"'<>]+)*(?:\/[^\s"'<>]*)?)/gi;
 
@@ -28,11 +27,7 @@ const OpenTabs = () => {
 
   return (
     <>
-      <Card>
-        <CardContent>
-          <Textarea placeholder="Type in your links to open" value={bulkLinks} onChange={(e) => setBulkLinks(e.target.value)} />
-        </CardContent>
-      </Card>
+      <Textarea placeholder="Type in your links to open" value={bulkLinks} onChange={(e) => setBulkLinks(e.target.value)} />
 
       <Button className="w-[100%] mt-2" onClick={openAllTabs}>
         Open all tabs
