@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Toaster } from '@/components/ui/sonner';
 
-import OpenTabs from '@/components/molecules/openTabs';
+import OpenTabs from '@/components/molecules/openTabs/openTabs';
 import CurrentTabsDataTable from '@/components/molecules/currentTabsDataTable/page';
 
 const TAB_TRIGGER_VALUES = {
