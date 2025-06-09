@@ -1,7 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 
+export interface TabInfo {
+  link: string | undefined;
+}
+
 export const useFetchTabs = () => {
-  const [tabs, setTabs] = useState<any[] | undefined>();
+  const [tabs, setTabs] = useState<TabInfo[] | undefined>();
 
   const fetchAllTabs = useCallback(async () => {
     if (!chrome || !chrome.tabs) {

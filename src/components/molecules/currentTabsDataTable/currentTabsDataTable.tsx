@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 import { type ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 
@@ -32,13 +33,13 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
       navigator.clipboard
         .writeText(selectedLinks.join('\n'))
         .then(() => {
-          alert('Links copied to clipboard:');
+          toast.success('Links have successfuly been copied to clipboard.');
         })
-        .catch((error) => {
-          alert('Failed to copy links');
+        .catch(() => {
+          toast.error('Failed to copy links.');
         });
     } else {
-      alert('No links selected to copy.');
+      toast.info('No links selected to copy.');
     }
   };
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -16,7 +17,7 @@ const OpenTabs = () => {
   const openAllTabs = () => {
     const links = extractLinks(bulkLinks);
     if (links.length === 0) {
-      alert('No valid links to open');
+      toast.error('No valid links to open');
       return;
     }
     links.forEach((url) => {
