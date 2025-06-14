@@ -6,7 +6,9 @@ import { type ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tan
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 
-interface DataTableProps<TData, TValue> {
+import type { TabInfo } from '@/hooks/useFetchTabs';
+
+interface DataTableProps<TData extends TabInfo, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
@@ -22,7 +24,7 @@ const copyToClipboard = (text: string) => {
     });
 };
 
-export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
+export function DataTable<TData extends TabInfo, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({

@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 
-export interface TabInfo {
+export type TabInfo = {
   link: string | undefined;
-}
+};
 
 export const useFetchTabs = () => {
   const [tabs, setTabs] = useState<TabInfo[] | undefined>();

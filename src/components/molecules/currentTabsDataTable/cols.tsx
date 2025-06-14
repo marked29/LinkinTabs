@@ -2,12 +2,9 @@ import { type ColumnDef } from '@tanstack/react-table';
 
 import { Checkbox } from '@/components/ui/checkbox';
 import { shortenUrl } from '@/lib/utils';
+import type { TabInfo } from '@/hooks/useFetchTabs';
 
-export type CurrentTabsDataTableProps = {
-  link: string;
-};
-
-export const cols: ColumnDef<CurrentTabsDataTableProps>[] = [
+export const cols: ColumnDef<TabInfo>[] = [
   {
     id: 'select',
     header: ({ table }) => (
