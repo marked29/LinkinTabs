@@ -27,9 +27,14 @@ const OpenTabs = () => {
 
   return (
     <>
-      <Textarea className="text-[12px]" placeholder="Type in your links to open" value={bulkLinks} onChange={(e) => setBulkLinks(e.target.value)} />
-
-      <Button className="w-[100%] mt-2" onClick={openAllTabs}>
+      <Textarea
+        aria-placeholder="input for the links to be opened"
+        className="h-[428px] w-full text-[12px] resize-none"
+        placeholder="Type in your links to open"
+        value={bulkLinks}
+        onChange={(e) => setBulkLinks(e.target.value)}
+      />
+      <Button className="w-full mt-2" onClick={openAllTabs}>
         Open all tabs
       </Button>
     </>

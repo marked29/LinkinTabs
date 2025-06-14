@@ -51,7 +51,7 @@ export function DataTable<TData extends TabInfo, TValue>({ columns, data }: Data
 
   return (
     <>
-      <div className="rounded-md border">
+      <div className="rounded-md border h-100 overflow-auto">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -80,10 +80,10 @@ export function DataTable<TData extends TabInfo, TValue>({ columns, data }: Data
             )}
           </TableBody>
         </Table>
-        <div className="text-muted-foreground text-sm p-2">
-          {table.getFilteredSelectedRowModel().rows.length} of {table.getFilteredRowModel().rows.length} row(s) selected.
-        </div>{' '}
       </div>
+      <div className="text-muted-foreground text-sm mt-2">
+        {table.getFilteredSelectedRowModel().rows.length} of {table.getFilteredRowModel().rows.length} row(s) selected.
+      </div>{' '}
       <Button className="w-full mt-2" onClick={handleCopyLinks}>
         Copy links
       </Button>

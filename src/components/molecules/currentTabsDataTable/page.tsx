@@ -20,7 +20,7 @@ const CurrentTabsDataTable = () => {
          * extension context, but keeping it for safety
          */
 
-        <div className="flex flex-col items-center  gap-4">
+        <div className="flex flex-col items-center gap-4">
           <p className="text-gray-500">No tabs available.</p>
           <Button onClick={fetchAllTabs}>Fetch all tabs</Button>
         </div>
